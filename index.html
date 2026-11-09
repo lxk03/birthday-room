@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>生日小屋</title>
+<meta name="description" content="一间点开就能走进去的房间。">
+<meta name="theme-color" content="#f3e2d0">
+<meta property="og:title" content="生日小屋">
+<meta property="og:description" content="门没锁，进来坐。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+<link rel="stylesheet" href="style.css?v=5">
+</head>
+<body data-theme="warm" data-lights="off" data-sky="dusk">
+
+<div class="app">
+
+  <!-- 顶栏 -->
+  <header class="hud">
+    <div class="hud-left">
+      <span class="hud-title" id="hudTitle">生日小屋</span>
+      <span class="hud-count" id="hudCount" aria-live="polite">
+        <span class="hud-stars" id="hudStars">☆☆☆☆☆☆☆☆☆☆</span>
+        <span class="hud-num"><b>0</b>/10</span>
+      </span>
+    </div>
+    <div class="hud-right">
+      <button class="chip" id="themeBtn" type="button" aria-label="换一种装修风格">
+        <span class="chip-ico" aria-hidden="true">🎨</span>
+        <span class="chip-txt" id="themeName">暖光</span>
+      </button>
+      <button class="chip chip-icon" id="soundBtn" type="button" aria-label="声音开关" aria-pressed="true">
+        <span class="chip-ico" aria-hidden="true" id="soundIco">🔊</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 房间（由 iso-room.js 生成） -->
+  <main class="stage">
+    <svg class="room" id="room" viewBox="0 0 1000 700"
+         preserveAspectRatio="xMidYMid meet" role="group" aria-label="一间生日小屋"></svg>
+
+    <div class="note" id="note" role="status" aria-live="polite" hidden>
+      <span class="note-who" id="noteWho"></span>
+      <span class="note-txt" id="noteTxt"></span>
+    </div>
+
+    <div class="hint" id="hint">
+      <span class="hint-dot"></span>
+      <span id="hintTxt">点一点屋里的东西</span>
+    </div>
+  </main>
+
+  <!-- 结尾层 -->
+  <div class="finale" id="finale" hidden>
+    <div class="finale-cake" aria-hidden="true">🎂</div>
+    <h2 class="finale-title" id="finaleTitle">生日快乐</h2>
+    <p class="finale-line" id="finaleLine1"></p>
+    <p class="finale-line" id="finaleLine2"></p>
+    <p class="finale-date" id="finaleDate"></p>
+    <button class="btn" id="againBtn" type="button">再看一遍</button>
+    <p class="signature" id="signature"></p>
+  </div>
+
+  <!-- 胶卷：照片轮播 -->
+  <div class="film-modal" id="filmModal" hidden>
+    <div class="film-reel">
+      <div class="film-perf top"></div>
+      <div class="film-window">
+        <img id="filmImg" alt="" hidden>
+        <div class="film-empty" id="filmEmpty"></div>
+      </div>
+      <div class="film-perf bottom"></div>
+    </div>
+    <button class="film-arrow prev" id="filmPrev" type="button" aria-label="上一张">‹</button>
+    <button class="film-arrow next" id="filmNext" type="button" aria-label="下一张">›</button>
+    <div class="film-count" id="filmCount"></div>
+    <button class="film-close" id="filmClose" type="button" aria-label="关闭">✕</button>
+  </div>
+
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+</div>
+
+<script src="config.js?v=5"></script>
+<script src="iso-room.js?v=5"></script>
+<script src="main.js?v=5"></script>
+</body>
+</html>
