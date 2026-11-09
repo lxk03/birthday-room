@@ -1,0 +1,2 @@
+﻿把 mp3 / m4a 放这个文件夹，然后在 config.js 的 tracks 里写文件名。
+例：{ title: "歌名", src: "music/1.mp3" },
